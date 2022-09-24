@@ -1,0 +1,15 @@
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.csproj.AssemblyReference.cache
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.AssemblyInfoInputs.cache
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.AssemblyInfo.cs
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.csproj.CoreCompileInputs.cache
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\bin\Debug\net6.0\ATIV_UC12_SA2_ER2.exe
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\bin\Debug\net6.0\ATIV_UC12_SA2_ER2.deps.json
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\bin\Debug\net6.0\ATIV_UC12_SA2_ER2.runtimeconfig.json
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\bin\Debug\net6.0\ATIV_UC12_SA2_ER2.dll
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\bin\Debug\net6.0\ATIV_UC12_SA2_ER2.pdb
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.dll
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\refint\ATIV_UC12_SA2_ER2.dll
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.pdb
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ATIV_UC12_SA2_ER2.genruntimeconfig.cache
+C:\Users\benigno\OneDrive (2).old\Educ\Programador Full Stack Senai\UC_12 - CODIFICAÇÃO PARA BACK-END\SA2\ATIV_UC12_SA2_ER2\obj\Debug\net6.0\ref\ATIV_UC12_SA2_ER2.dll

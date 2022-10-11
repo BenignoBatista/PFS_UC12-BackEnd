@@ -9,16 +9,16 @@ namespace ATIV_UC12_SA2_ER2.Classes
     //A Interface de vir depois da classe conforme feito abaixo.
     public class PessoaFisica : Pessoa, IPessoaFisica
     {
-        public PessoaFisica(string dataNasc){
-            this.setDataNascimento(dataNasc);
-        }
-        public string ?cpf { get; private set; }
+        // public PessoaFisica(string dataNasc){
+        //     this.setDataNascimento(dataNasc);
+        // }
+        public string ?cpf { get; set; }
         public string ?dataNascimento { get; set; }
 
         //set
-        public void setDataNascimento(string dataNasc) {
-            this.dataNascimento = dataNasc;
-        }
+        // public void setDataNascimento(string dataNasc) {
+        //     this.dataNascimento = dataNasc;
+        // }
         public bool ValidarDataNascimento(string dataNasc) // Recebeu 20/07/1982
         {
             DateTime dataConvertida;

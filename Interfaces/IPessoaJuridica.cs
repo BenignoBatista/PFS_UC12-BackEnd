@@ -7,6 +7,6 @@ namespace ATIV_UC12_SA2_ER2.Interfaces
 {
     public interface IPessoaJuridica
     {
-        bool validarCnpj(string cnpj);
+        bool ValidarCnpj(string cnpj);
     }
 }

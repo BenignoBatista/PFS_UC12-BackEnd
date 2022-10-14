@@ -15,6 +15,23 @@ namespace ATIV_UC12_SA2_ER2.Classes
         public string ?cpf { get; set; }
         public string ?dataNascimento { get; set; }
 
+        public override double PagarImposto(double rendimento)
+        {
+           if (rendimento <= 1500)
+           {
+            return rendimento; // isento
+           } 
+           else if(rendimento >= 1501 && rendimento <= 5000)
+           {
+                return rendimento - (rendimento / 100) * 3; // 3%
+                // return rendimento * 1.03% // 3%
+           }
+           
+        // quem ganha acima de 5001
+            // return rendimento - (rendimento / 100) * 5; //5%
+            return rendimento * 0.95; //5%
+        }
+
         //set
         // public void setDataNascimento(string dataNasc) {
         //     this.dataNascimento = dataNasc;

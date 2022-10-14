@@ -11,14 +11,11 @@ namespace ATIV_UC12_SA2_ER2.Classes
     {
         public string ?nome { get; set; }
         public Endereco endereco { get; set; }
-        public double ?rendimento { get; set; }
+        public double rendimento { get; set; }
 
-        
-        //implementando o método pagarImposto da IPessoa
-        double IPessoa.PagarImposto(double rendimento)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract double PagarImposto(double rendimento);
+
+
 
         double IPessoa.Teste(double rendimento)
         {

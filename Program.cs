@@ -5,6 +5,127 @@ using System.Text.RegularExpressions;
 // imprimir no console
 
 using ATIV_UC12_SA2_ER2.Classes;
+//Objetos Utilitários Genéricos
+PessoaJuridica metodoPJ = new PessoaJuridica();
+PessoaFisica metodoPF = new PessoaFisica();
+
+//************* ENCONTRO REMOTO 6 *************
+//Cabeçalho de boas vindas
+System.Console.WriteLine(@$"
+=========================================================
+|          Bem vindo ao sistema de cadastro de          |
+|              Pessoas Físicas e Jurídicas              |
+=========================================================
+");
+Utils.BarraCarregamento("Iniciando o Sistema", 3, 500);
+
+// ************ Menu de Opções **************
+string? opcao;
+do
+{
+    System.Console.WriteLine(@$"
+=========================================================
+|          Escolha uma das seguintes opções             |
+---------------------------------------------------------
+|              1 - Pessoas Físicas                      |
+|              2 - Pessoas Jurídicas                    |
+|                                                       |
+|              0 - Sair                                 |
+=========================================================
+");
+
+System.Console.Write($"OPÇÃO: ");
+
+opcao = Console.ReadLine(); // Espera o usuário digitar
+Console.Clear();
+
+switch (opcao)
+{
+    case "1": //Pessoa Física
+        Utils.BarraCarregamento("Cadastrando", 3, 300);
+        // Endereço da pessoa física
+        Endereco endPf = new Endereco();
+        endPf.logradouro = "Rua de Casa";
+        endPf.numero = 123;
+        endPf.comercial = false;
+        //Cadastrando Pessoa Física
+        PessoaFisica joao = new PessoaFisica();
+        joao.nome = "João da Silva";
+        joao.cpf = "12345670977";
+        joao.dataNascimento = "20/09/1990";
+        joao.rendimento = 6000;
+        joao.endereco = endPf;
+        //Exibir dados
+        Console.WriteLine(@$"
+            Nome: {joao.nome}
+            Endereço: {joao.endereco.logradouro}
+            Número: {joao.endereco.numero}
+            Endereço Comercial: {joao.endereco.comercial}
+            Data de nascimento do João: {joao.dataNascimento}
+            Maior de idade: {metodoPF.ValidarDataNascimento(joao.dataNascimento)}
+            CPF: {joao.cpf}
+            Rendimento Bruto: R$ {joao.rendimento}
+            Rendimento líquido: R$ {metodoPF.PagarImposto(joao.rendimento)}
+            ");
+            //Parada no sistema
+            System.Console.Write($"Digite ENTER para continuar ...");
+            Console.ReadLine();
+            Console.Clear();
+        break;
+        
+    case "2": //Pessoas Jurídica
+            //Cadastro
+            Endereco novoEndSenai = new Endereco();
+            novoEndSenai.logradouro = "Rua Niterói";
+            novoEndSenai.numero = 180;
+            novoEndSenai.comercial = true;
+
+            PessoaJuridica senai = new PessoaJuridica();
+            senai.razaoSocial = "Serviço Nacional de Aprendizagem Industrial";
+            senai.cnpj = "12.123.444/0001-98";
+            // senai.cnpj = "12123444000198";
+            senai.nome = "SENAI";
+            senai.rendimento = 12000;
+            senai.endereco = novoEndSenai;
+
+            // Exibir Dados
+            System.Console.WriteLine("******* DADOS PESSOA JURÍDICA ******* ");
+            Console.WriteLine(@$"
+            Razão Social: {senai.razaoSocial}
+            Nome Fantasia: {senai.nome}
+            Endereço: {senai.endereco.logradouro}
+            Número: {senai.endereco.numero}
+            Endereço Comercial: {senai.endereco.comercial}
+            CNPJ: {senai.cnpj}
+            CNPJ Válido: {metodoPJ.ValidarCnpj(senai.cnpj)}
+            Rendimento Bruto: R$ {senai.rendimento}
+            Rendimento líquido: R$ {metodoPJ.PagarImposto(senai.rendimento)}
+            ");
+            //Parada no sistema
+            System.Console.Write($"Digite ENTER para continuar ...");
+            Console.ReadLine();
+            Console.Clear();
+                break;
+
+    case "0": // Sair
+        System.Console.WriteLine("Obrigado por utilizar nosso sistema!!!");
+        break;
+
+    default:
+        Console.ForegroundColor = ConsoleColor.Red;
+        System.Console.WriteLine("Opção Inválida, escolha outra opção");
+        Console.ResetColor();
+        break;
+}
+
+} while (opcao != "0");
+
+
+
+
+
+
+
 
 // PessoaJuridica senai = new PessoaJuridica();
 
@@ -44,74 +165,21 @@ using ATIV_UC12_SA2_ER2.Classes;
 // Console.WriteLine($"Comercial: {eduardo.endereco.comercial}");
 
 //************* ENCONTRO REMOTO 5 *************
-//Objetos Utilitários Genéricos
-PessoaJuridica metodoPJ = new PessoaJuridica();
-PessoaFisica metodoPF = new PessoaFisica();
 
-// DADOS PESSOA JURÍDICA
-Endereco novoEndSenai = new Endereco();
-novoEndSenai.logradouro = "Rua Niterói";
-novoEndSenai.numero = 180;
-novoEndSenai.comercial = true;
-
-PessoaJuridica senai = new PessoaJuridica();
-senai.razaoSocial = "Serviço Nacional de Aprendizagem Industrial";
-senai.cnpj = "12.123.444/0001-98";
-// senai.cnpj = "12123444000198";
-senai.nome = "SENAI";
-senai.rendimento = 12000;
-senai.endereco = novoEndSenai;
 
 
 //Console.WriteLine($"Salário Líquido do Senai: {metodoPJ.PagarImposto(senai.rendimento)}");
 // System.Console.WriteLine($"CNPJ {senai.cnpj} é válido? {metodoPJ.ValidarCnpj(senai.cnpj)}");
 
 
-// DADOS PESSOA FÍSICA
-// Endereço da pessoa física
-Endereco endPf = new Endereco();
-endPf.logradouro = "Rua de Casa";
-endPf.numero = 123;
-endPf.comercial = false;
-
-PessoaFisica joao = new PessoaFisica();
-joao.nome = "João da Silva";
-joao.cpf = "12345670977";
-joao.dataNascimento = "20/09/1990";
-joao.rendimento = 6000;
-joao.endereco = endPf;
-
 // Calcula imposto 
 
 // Console.WriteLine($"Salário Líquido do João: {metodoPF.PagarImposto(joao.rendimento)}");
 
-// EXIBIÇÃO DE DADOS
-System.Console.WriteLine("******* DADOS PESSOA JURÍDICA ******* ");
-Console.WriteLine(@$"
-Razão Social: {senai.razaoSocial}
-Nome Fantasia: {senai.nome}
-Endereço: {senai.endereco.logradouro}
-Número: {senai.endereco.numero}
-Endereço Comercial: {senai.endereco.comercial}
-CNPJ: {senai.cnpj}
-CNPJ Válido: {metodoPJ.ValidarCnpj(senai.cnpj)}
-Rendimento Bruto: R$ {senai.rendimento}
-Rendimento líquido: R$ {metodoPJ.PagarImposto(senai.rendimento)}
-");
 
 
-System.Console.WriteLine("******* DADOS PESSOA FÍSICA ******* ");
-Console.WriteLine(@$"
-Nome: {joao.nome}
-Endereço: {joao.endereco.logradouro}
-Número: {joao.endereco.numero}
-Endereço Comercial: {joao.endereco.comercial}
-Data de nascimento do João: {joao.dataNascimento}
-Maior de idade: {metodoPF.ValidarDataNascimento(joao.dataNascimento)}
-CPF: {joao.cpf}
-Rendimento Bruto: R$ {joao.rendimento}
-Rendimento líquido: R$ {metodoPF.PagarImposto(joao.rendimento)}
-");
+//System.Console.WriteLine("******* DADOS PESSOA FÍSICA ******* ");
+
 
 
 

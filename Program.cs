@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-// criar uma pessoa física
-// preencher o nome
-// imprimir no console
+
 
 using ATIV_UC12_SA2_ER2.Classes;
 //Objetos Utilitários Genéricos
@@ -10,7 +8,6 @@ PessoaJuridica metodoPJ = new PessoaJuridica();
 PessoaFisica metodoPF = new PessoaFisica();
 List<PessoaFisica> listaPf = new List<PessoaFisica>();//Cria uma lista de pessoa física (Array de objetos)
 
-//************* ENCONTRO REMOTO 6 *************
 //Cabeçalho de boas vindas
 System.Console.WriteLine(@$"
 =========================================================
@@ -18,10 +15,12 @@ System.Console.WriteLine(@$"
 |              Pessoas Físicas e Jurídicas              |
 =========================================================
 ");
+
 Utils.BarraCarregamento("Iniciando o Sistema", 3, 500);
 
 // ************ Menu de Opções **************
 string? opcao;
+
 do
 {
     System.Console.WriteLine(@$"
@@ -43,7 +42,8 @@ do
     {
         case "1": //Pessoa Física
                   // Utils.BarraCarregamento("Cadastrando", 3, 300);
-            string? opcaoPf;
+                  
+            string opcaoPf;
             do  //Submenu pessoa física
             {
                 Console.Clear();
@@ -72,6 +72,7 @@ do
                         endPf.numero = int.Parse(Console.ReadLine());
                         Console.WriteLine($"Endereço é comecial? S/N");
                         string enderecoComercial = Console.ReadLine();
+
                         if (enderecoComercial.ToUpper() == "S")
                         {
                             endPf.comercial = true;
@@ -95,6 +96,12 @@ do
 
                         // guarda a pessoa física da lista
                         listaPf.Add(novaPf);
+
+                        //Fazer parada no sistema
+                        Console.WriteLine($"Pessoa física cadastrada com sucesso");
+                        Console.WriteLine($"Tecle ENTER para continuar...");
+                        Console.ReadLine();                        
+                        
                         break;
 
                     case "2":
@@ -126,37 +133,41 @@ do
                             Thread.Sleep(2000);//Espera 2 segundos e volta para o submenu
                         }
 
+                        //Fazer parada no sistema
+                        Console.WriteLine($"*** Fim da listagem ***");
+                        Console.WriteLine($"Tecle ENTER para continuar...");
+                        Console.ReadLine();
                         break;
 
                     case "0":
                         //Voltar ao menu anterior
                         Console.WriteLine($"Voltar ao menu anterior");
-
                         break;
 
                     default:
+                        //Voltar ao menu anterior
                         Console.ForegroundColor = ConsoleColor.Red;
                         System.Console.WriteLine("Opção Inválida do submenu");
                         Console.ResetColor();
+
+                        //Fazer parada no sistema
+                        Console.Write($"Tecle ENTER para continuar...");
+                        Console.ReadLine();
                         break;
                 }
 
-                System.Console.Write("Digite ENTER para continuar SUBMENU...");
-
+                
             } while (opcaoPf != "0");
 
 
-
-
-
             //Parada no sistema
-            System.Console.Write($"Digite ENTER para continuar ...");
-            Console.ReadLine();
+            // System.Console.Write($"Digite ENTER para continuar ...");
+            // Console.ReadLine();
             Console.Clear();
             break;
 
         case "2": //Pessoas Jurídica
-                  //Cadastro
+                  
 
             //Parada no sistema
             System.Console.Write($"Digite ENTER para continuar ...");
@@ -165,12 +176,14 @@ do
             break;
 
         case "0": // Sair
+            Console.ForegroundColor = ConsoleColor.Yellow;
             System.Console.WriteLine("Obrigado por utilizar nosso sistema!!!");
+            Console.ResetColor();
             break;
 
         default:
             Console.ForegroundColor = ConsoleColor.Red;
-            System.Console.WriteLine("Opção Inválida, escolha outra opção");
+            System.Console.WriteLine("Obrigado por utilizar o sitema !!!");
             Console.ResetColor();
             break;
     }

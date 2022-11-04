@@ -64,91 +64,79 @@ do
                 switch (opcaoPf)
                 {
                     case "1"://Cadastrar pessoa física
-                        //Endereço
-                        // Endereco endPf = new Endereco();
-                        // Console.WriteLine($"Qual é o endereço? ");
-                        // endPf.logradouro = Console.ReadLine();
-                        // Console.WriteLine($"Qual é o número? ");
-                        // endPf.numero = int.Parse(Console.ReadLine());
-                        // Console.WriteLine($"Endereço é comecial? S/N");
-                        // string enderecoComercial = Console.ReadLine();
+                             //Endereço
+                        Endereco endPf = new Endereco();
+                        Console.WriteLine($"Qual é o endereço? ");
+                        endPf.logradouro = Console.ReadLine();
+                        Console.WriteLine($"Qual é o número? ");
+                        endPf.numero = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"Endereço é comecial? S/N");
+                        string enderecoComercial = Console.ReadLine();
 
-                        // if (enderecoComercial.ToUpper() == "S")
-                        // {
-                        //     endPf.comercial = true;
-                        // }
-                        // else
-                        // {
-                        //     endPf.comercial = false;
-                        // }
+                        if (enderecoComercial.ToUpper() == "S")
+                        {
+                            endPf.comercial = true;
+                        }
+                        else
+                        {
+                            endPf.comercial = false;
+                        }
 
                         //Dados pessoais
                         PessoaFisica novaPf = new PessoaFisica();
-                        novaPf.PreencherDadosDeTeste();
-                        //Cadastrar no txt
-
-                        using ( StreamWriter arquivo = new StreamWriter($"./DadosPf/PessoaFisica.txt", append: true))
-                        {
-                            arquivo.WriteLine( $"{novaPf.nome},{novaPf.endereco.logradouro},{novaPf.endereco.numero}");
-                            arquivo.Close();
-                        }
-
-                        // Console.WriteLine($"Qual é o nome? ");
-                        // novaPf.nome = Console.ReadLine();
-                        // Console.WriteLine($"Qual é o CPF? ");
-                        // novaPf.cpf = Console.ReadLine();
-                        // Console.WriteLine($"Qual é sua data de nascimento? Ex.: 25/04/1988 ");
-                        // novaPf.dataNascimento = Console.ReadLine();
-                        // Console.WriteLine($"Qual é seu rendimento? ");
-                        // novaPf.rendimento = double.Parse(Console.ReadLine());//converte texto pra double
-                        // novaPf.endereco = endPf;
+                        Console.WriteLine($"Qual é o nome? ");
+                        novaPf.nome = Console.ReadLine();
+                        Console.WriteLine($"Qual é o CPF? ");
+                        novaPf.cpf = Console.ReadLine();
+                        Console.WriteLine($"Qual é sua data de nascimento? Ex.: 25/04/1988 ");
+                        novaPf.dataNascimento = Console.ReadLine();
+                        Console.WriteLine($"Qual é seu rendimento? ");
+                        novaPf.rendimento = double.Parse(Console.ReadLine());//converte texto pra double
+                        novaPf.endereco = endPf;
 
                         // guarda a pessoa física da lista
                         listaPf.Add(novaPf);
 
-                        using (StreamWriter sw = new StreamWriter($"./DadosPf/PessoaFisica.txt", append: true))
-                        {
-                            sw.WriteLine("Ben, Rua da Casa");
-                            sw.Close();
-                        }
-
                         //Fazer parada no sistema
-                        Utils.ParadaNoConsole("Pessoa física cadastrada com sucesso");
+                        Console.WriteLine($"Pessoa física cadastrada com sucesso");
+                        Console.WriteLine($"Tecle ENTER para continuar...");
+                        Console.ReadLine();                        
+                        
                         break;
 
                     case "2":
                         //Listar pessoa física
                         Console.WriteLine($"Listar pessoa física");
-                         using( StreamReader arquivo = new StreamReader($"./DadosPf/PessoaFisica.txt"))
-                             {
-                                string linha;
 
-                                while((linha = arquivo.ReadLine())!= null)
-                                {
-                                    Console.WriteLine($"{linha}");
-                                    
-                                }
-                             }
-                        // if (listaPf.Count > 0) //Lista
-                        // // {
-                        //     foreach (PessoaFisica pf in listaPf)//imprimi cada pessoa da lista
-                        //     {
-                        //     //   pf.Imprimir();//Vide o método - imprime todas as propriedades da classe
-                        //    
-
-                        //     }
-                        // }
-                        // else
-                        // {
-                        //     Console.ForegroundColor = ConsoleColor.DarkRed;
-                        //     Console.WriteLine($"Lista Vazia");
-                        //     Console.ResetColor();
-                        //     Thread.Sleep(2000);//Espera 2 segundos e volta para o submenu
-                        // }
-
+                        if (listaPf.Count > 0) //Lista
+                        {
+                            foreach (PessoaFisica pf in listaPf)//imprimi cada pessoa da lista
+                            {
+                                Console.WriteLine(@$"
+            Nome: {pf.nome}
+            Endereço: {pf.endereco.logradouro}
+            Número: {pf.endereco.numero}
+            Endereço Comercial: {pf.endereco.comercial}
+            Data de nascimento: {pf.dataNascimento}
+            Maior de idade: {metodoPF.ValidarDataNascimento(pf.dataNascimento)}
+            CPF: {pf.cpf}
+            Rendimento Bruto: R$ {pf.rendimento}
+            Rendimento líquido: R$ {metodoPF.PagarImposto(pf.rendimento)}
+            ");
+                            }
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine($"Lista Vazia");
+                            Console.ResetColor();
+                            Thread.Sleep(2000);//Espera 2 segundos e volta para o submenu
+                        }
 
                         //Fazer parada no sistema
-                        Utils.ParadaNoConsole("*** Fim da Listagem ***");
+                        Console.WriteLine($"*** Fim da listagem ***");
+                        Console.WriteLine($"Tecle ENTER para continuar...");
+                        Console.ReadLine();
                         break;
 
                     case "0":
@@ -159,23 +147,31 @@ do
                     default:
                         //Voltar ao menu anterior
                         Console.ForegroundColor = ConsoleColor.Red;
-                        //Fazer parada no sistema
-                        Utils.ParadaNoConsole("Opção Inválida do submenu");
+                        System.Console.WriteLine("Opção Inválida do submenu");
                         Console.ResetColor();
-                    break;
+
+                        //Fazer parada no sistema
+                        Console.Write($"Tecle ENTER para continuar...");
+                        Console.ReadLine();
+                        break;
                 }
 
                 
             } while (opcaoPf != "0");
 
 
+            //Parada no sistema
+            // System.Console.Write($"Digite ENTER para continuar ...");
+            // Console.ReadLine();
             Console.Clear();
             break;
 
         case "2": //Pessoas Jurídica
                   
+
             //Parada no sistema
-            Utils.ParadaNoConsole("Digite ENTER para continuar ...");
+            System.Console.Write($"Digite ENTER para continuar ...");
+            Console.ReadLine();
             Console.Clear();
             break;
 
@@ -187,7 +183,7 @@ do
 
         default:
             Console.ForegroundColor = ConsoleColor.Red;
-            System.Console.WriteLine("Opção inválida, escolha outra opção");
+            System.Console.WriteLine("Obrigado por utilizar o sitema !!!");
             Console.ResetColor();
             break;
     }

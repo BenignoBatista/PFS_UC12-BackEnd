@@ -60,5 +60,37 @@ namespace ATIV_UC12_SA2_ER2.Classes
             }
             
         }
+
+        public void PreencherDadosDeTeste()
+        {
+            Endereco endPf = new Endereco();
+            endPf.logradouro = "Rua da Casa";
+            endPf.numero = 55;
+            endPf.comercial = false;
+            // Dados da classe
+            this.nome = "Ben Batista";
+            this.cpf = "685.785.652-96";
+            this.dataNascimento = "25/04/2007";
+            this.rendimento = 1920.98;
+            this.endereco = endPf;
+        }
+
+
+        public void Imprimir()
+        {
+              Console.WriteLine(@$"
+            Nome: {this.nome}
+            Endereço: {this.endereco.logradouro}
+            Número: {this.endereco.numero}
+            Endereço Comercial: {this.endereco.comercial}
+            Data de nascimento: {this.dataNascimento}
+            Maior de idade: {this.ValidarDataNascimento(this.dataNascimento)}
+            CPF: {this.cpf}
+            Rendimento Bruto: R$ {this.rendimento}
+            Rendimento líquido: R$ {this.PagarImposto(this.rendimento)}
+            ");
+        }
+
+
     }
 }

@@ -21,5 +21,17 @@ namespace ATIV_UC12_SA2_ER2.Classes
             Console.ResetColor(); //Volta as cores de fundo e fonte para o padrão
             System.Console.WriteLine(); // Pular uma linha
         }
+
+        public static void ParadaNoConsole(string txt)
+        {
+             //Fazer parada no sistema
+            Console.WriteLine(txt);
+            Console.WriteLine($"Tecle ENTER para continuar...");
+            Console.ReadLine();
+        }
+
+
+       
+
     }
 }
